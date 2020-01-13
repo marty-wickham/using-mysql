@@ -1,0 +1,19 @@
+An Example from MySQL in Action module:
+
+The ORDER BY clause:
+
+Challenge 4:
+
+select concat(FirstName, " ", LastName) as Name, InvoiceDate as Date, Total from Invoice
+inner join Customer on Invoice.CustomerId = Customer.CustomerId
+order by Total desc, Date desc
+Limit 10;
+
+The GROUP BY Clause:
+
+Challenge 3:
+
+mysql> select MediaType.Name as MediaType, count(*) as Amount from MediaType
+    -> join Track on MediaType.MediaTypeId = Track.MediaTypeId
+    -> group by MediaType
+    -> order by Amount desc;
